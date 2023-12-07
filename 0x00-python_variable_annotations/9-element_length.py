@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' type-annotated function make_multiplier'''
+''' type-annotated function '''
 
 from typing import List, Tuple, Iterable, Sequence
 
