@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 ''' definitions with set values '''
 
+type Input_list = list[float]
 
-def sum_list(input_list: list[float]) -> float:
+
+def sum_list(input_list: Input_list) -> float:
     '''
         function which takes a list input_list
         of floats as argument and returns
