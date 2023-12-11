@@ -13,21 +13,15 @@
 
 
 import asyncio
-from typing import List
-wait_random = __import__('0-basic_async_syntax').wait_random
+import time
+wait_random = __import__('1-concurrent_coroutines').wait_n
 
 
-async def wait_n(n: int, max_delay: int) -> List[float]:
-    ''' function that craetes wait time '''
-    delays = []
-    tasks = []
+def measure_time(n: int, max_delay: int) -> float:
+    ''' function that gets total run time '''
+    start_time = time.time()
+    asyncio.run(wait_n(n, max_delay))
+    end_time = time.time()
 
-    for i in range(n):
-        task = wait_random(max_delay)
-        tasks.append(task)
-
-    for task in asyncio.as_completed((tasks)):
-        delay = await task
-        delays.append(delay)
-
-    return delays
+    total_time = end_time - start_time
+    return (total_time/n)
