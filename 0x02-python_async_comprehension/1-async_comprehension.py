@@ -13,7 +13,7 @@ from typing import List
 async_generator = __import__('0-async_generator').async_generator
 
 
-async def async_generator() -> List[float]:
+async def async_comprehension() -> List[float]:
     ''' function that returns 10 random numbers '''
     random_numbers = [rand_num async for rand_num in async_generator()]
 
